@@ -16,3 +16,16 @@ mysql> INSERT INTO EMPLOYEE_1
     -> ('103','C','200','Feb');
 Query OK, 6 rows affected (0.01 sec)
 Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> insert into student values('101','A','PHY','25','1030'),
+    -> ('101','A','CHE','34','1030'),
+    -> ('101','A','MAT','47','1032'),
+    -> ('101','A','SCI','87','1029'),
+    -> ('102', 'B', 'PHY', '35', '1030'),
+    -> ('102', 'B', 'CHE' ,'48', '1030'),
+    -> ('102', 'B', 'MAT', '97', '1032'),
+    -> ('102', 'B', 'SCI', '98', '1029'),
+    -> ('102', 'B', 'ECM', '97', '1031'),
+    -> ('102', 'B', 'CSP', '22', '1031');
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
