@@ -110,3 +110,49 @@ mysql> select emp_id,max(emp_name),sum(case when month='jan' then emp_sal else 0
 |    102 | B             |  200 |  300 |
 +--------+---------------+------+------+
 1 row in set (0.01 sec)
+
+10.Find the difference in marks of individual subject for different students and insert new column and add the difference in mark.
+
+mysql> select stud_id,stud_name,a.stud_sub,marks,case when max_marks-marks>0 then max_marks-marks else marks-max_marks end as diff_marks
+    -> from student as a
+    -> inner join(select max(marks) as max_marks,stud_sub from student group by stud_sub) as b
+    -> on a.stud_sub=b.stud_sub;
++---------+-----------+----------+-------+------------+
+| stud_id | stud_name | stud_sub | marks | diff_marks |
++---------+-----------+----------+-------+------------+
+|     101 | A         | PHY      |    25 |         10 |
+|     101 | A         | CHE      |    34 |         14 |
+|     101 | A         | MAT      |    47 |         50 |
+|     101 | A         | SCI      |    87 |         11 |
+|     102 | B         | PHY      |    35 |          0 |
+|     102 | B         | CHE      |    48 |          0 |
+|     102 | B         | MAT      |    97 |          0 |
+|     102 | B         | SCI      |    98 |          0 |
+|     102 | B         | ECM      |    97 |          0 |
+|     102 | B         | CSP      |    22 |          0 |
++---------+-----------+----------+-------+------------+
+10 rows in set (0.01 sec)
+
+11.calculate the total sum of marks according to the department_code.
+
+mysql> select stud_id,stud_name,a.stud_sub,marks,a.dept_id ,case when max_marks-marks>0 then max_marks-marks else marks-max_marks end as diff_marks,case when a.dept_id=c.dept_id then total_marks else 0 end as dept_max_marks
+    -> from student as a
+    -> inner join(select max(marks) as max_marks,stud_sub from student group by stud_sub) as b
+    -> on a.stud_sub=b.stud_sub
+    -> inner join(select sum(marks) as total_marks,dept_id from student group by dept_id) as c
+    -> on a.dept_id=c.dept_id;
++---------+-----------+----------+-------+---------+------------+----------------+
+| stud_id | stud_name | stud_sub | marks | dept_id | diff_marks | dept_max_marks |
++---------+-----------+----------+-------+---------+------------+----------------+
+|     101 | A         | PHY      |    25 |    1030 |         10 |            142 |
+|     101 | A         | CHE      |    34 |    1030 |         14 |            142 |
+|     101 | A         | MAT      |    47 |    1032 |         50 |            144 |
+|     101 | A         | SCI      |    87 |    1029 |         11 |            185 |
+|     102 | B         | PHY      |    35 |    1030 |          0 |            142 |
+|     102 | B         | CHE      |    48 |    1030 |          0 |            142 |
+|     102 | B         | MAT      |    97 |    1032 |          0 |            144 |
+|     102 | B         | SCI      |    98 |    1029 |          0 |            185 |
+|     102 | B         | ECM      |    97 |    1031 |          0 |            119 |
+|     102 | B         | CSP      |    22 |    1031 |          0 |            119 |
++---------+-----------+----------+-------+---------+------------+----------------+
+10 rows in set (0.01 sec)
