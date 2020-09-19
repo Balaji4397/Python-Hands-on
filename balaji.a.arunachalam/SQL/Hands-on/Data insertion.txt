@@ -1,0 +1,18 @@
+mysql> INSERT INTO EMPLOYEE
+    -> VALUES('101','A','2020-06-01',str_to_date('9:00 AM','%l:%i %p'),str_to_date('3:00 PM','%l:%i %p')),
+    -> ('101','A','2020-06-01',str_to_date('3:15 PM','%l:%i %p'),str_to_date('4:25 PM','%l:%i %p')),
+    -> ('102','B','2020-06-01',str_to_date('3:00 PM','%l:%i %p'),str_to_date('7:00 PM','%l:%i %p')),
+    -> ('102','B','2020-06-01',str_to_date('8:30 PM','%l:%i %p'),str_to_date('9:15 PM','%l:%i %p')),
+    -> ('103','C','2020-06-02',str_to_date('3:00 PM','%l:%i %p'),str_to_date('7:00 PM','%l:%i %p'));
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO EMPLOYEE_1
+    -> VALUES('101','A','100','Jan'),
+    -> ('101','A','200','Feb'),
+    -> ('102','B','200','Jan'),
+    -> ('102','B','300','Feb'),
+    -> ('103','C','200','Jan'),
+    -> ('103','C','200','Feb');
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0

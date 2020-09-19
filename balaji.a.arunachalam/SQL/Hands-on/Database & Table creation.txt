@@ -1,0 +1,18 @@
+mysql> CREATE DATABASE BALAJI;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE BALAJI
+Database changed
+mysql> CREATE TABLE EMPLOYEE(emp_id int,
+    ->       emp_name varchar(25),
+    ->       date Date,
+    ->       in_time Time,
+    ->       out_time Time);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> create table employee_1(
+    -> emp_id int,
+    -> emp_name varchar(5),
+    -> emp_sal int,
+    -> month varchar(5));
+Query OK, 0 rows affected (0.10 sec)
