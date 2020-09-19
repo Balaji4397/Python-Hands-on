@@ -16,3 +16,6 @@ mysql> create table employee_1(
     -> emp_sal int,
     -> month varchar(5));
 Query OK, 0 rows affected (0.10 sec)
+
+mysql> create table student(stud_id int,stud_name varchar(20),stud_sub varchar(20),marks int,dept_id int);
+Query OK, 0 rows affected (0.20 sec)
