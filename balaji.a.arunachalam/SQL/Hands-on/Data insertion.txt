@@ -29,3 +29,4 @@ mysql> insert into student values('101','A','PHY','25','1030'),
     -> ('102', 'B', 'CSP', '22', '1031');
 Query OK, 10 rows affected (0.05 sec)
 Records: 10  Duplicates: 0  Warnings: 0
+Balaji
