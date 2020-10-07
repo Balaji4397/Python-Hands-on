@@ -17,5 +17,17 @@ mysql> create table employee_1(
     -> month varchar(5));
 Query OK, 0 rows affected (0.10 sec)
 
-mysql> create table student(stud_id int,stud_name varchar(20),stud_sub varchar(20),marks int,dept_id int);
-Query OK, 0 rows affected (0.20 sec)
+mysql> create table Book(
+    -> AUTHOR_ID varchar(10),
+    -> AUTHOR_NAME varchar(25),
+    -> AUTHOR_COUNTRY varchar(20),
+    -> AUTHOR_CITY varchar(15),
+    -> PUBLISH_ID varchar(4));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> CREATE TABLE PUBLISHER(PUBLISH_ID varchar(4),
+    ->       PUBLISH_NAME varchar(30),
+    ->       PUBLISH_CITY varchar(15),
+    ->       PUBLISH_START_DATE date,
+    ->       BRANCHES int);
+Query OK, 0 rows affected (0.09 sec)
