@@ -113,3 +113,32 @@ class Sample(object):
         pass
     def sub(self):
         pass
+    
+# make the sum of the indivuidual array integer and return the maximum sum of equal sum value
+# Eg: A=[11,23,43,34,12,32] output is 77
+
+def fun(N):
+    arr=set()
+    maxi,total=0,0
+    for x in N:
+        a=int(x/10)
+        b=int(x%10)
+        arr.add(a+b)
+    for y in arr:
+        c,d=0,0
+        for z in N:
+            c=int(z/10)
+            d=int(z%10)
+            sums=c+d
+            if sums == y:
+                total=total+z
+            else:
+                continue
+        if total>maxi:
+            maxi=total
+            total=0
+        else:
+            total=0
+    return maxi
+       
+print(fun([71,57,65,17,65,36]))
